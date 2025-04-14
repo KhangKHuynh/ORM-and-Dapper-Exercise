@@ -33,11 +33,10 @@ namespace ORM_Dapper
           var prodRepo = new ProductRepository(conn);
           
           prodRepo.AddProduct("JONDGeneric Product", 20.99, 10, false, 300);
-          var prod =  prodRepo.GetAllProducts().FirstOrDefault(e => e.Name == "JONDGeneric Product");
           
-          prodRepo.UpdateProduct(prod.ProductID, "New Name", 50.00, 10, true, 150);
+          prodRepo.UpdateProduct(951, "New Name", 50.00, 10, true, 150);
 
-          prodRepo.DeleteProduct(prod.ProductID);
+          prodRepo.DeleteProduct(951);
           
 
           var products = prodRepo.GetAllProducts();
